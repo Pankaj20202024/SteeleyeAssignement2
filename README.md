@@ -109,11 +109,41 @@ function highlightHTMLContent(htmlContent, plainText, data) {
 4. It initializes a `count` variable to keep track of the occurrences of 
    the `plaintextword` in the `htmlContent`.
 
+```jsx
+
+let count = 0;
+
+```
+
 5. It iterates over the `htmlContent` to find occurrences of the 
    `plaintextword`. When it finds a match, it increments the `count` and 
    checks if the count is greater than the occurrences found before the 
    start position. If yes, it highlights the next occurrence of the 
    `plaintextword` using the `<mark>` tag and breaks out of the loop.
+
+```jsx
+
+for (let i = 0; i < htmlContent.length; i++) {
+    const portionToCheck = htmlContent.slice(i, i + plaintextword.length);
+    if (portionToCheck === plaintextword) {
+      count++;
+      if (count > occurrencesBefore) {
+        // Highlight the next occurrence of plaintextword
+        const regex = new RegExp(plaintextword, "g");
+        htmlContent = htmlContent.replace(regex, (match, index) => {
+          if (index === i) {
+            return `<mark>${match}</mark>`;
+          } else {
+            return match;
+          }
+        });
+        break;
+      }
+    }
+  }
+
+```
+
 6. The function returns the modified `htmlContent`.
 
 #### Function 4 : countOccurrencesBeforePosition
