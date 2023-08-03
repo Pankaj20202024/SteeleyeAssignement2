@@ -1,4 +1,4 @@
-### Code Approach Explanation : 
+### Code Approach Explanation: 
 
 #### The main execution:
 
@@ -42,6 +42,20 @@ function getTerminalOutput() {
 5. Finally, it returns the fully modified `htmlContent`.
 
 #### Function 3 : highlightHTMLContent
+
+Then I have written this `highlightHTMLContent` function.
+
+```jsx 
+
+function highlightHTMLContent(htmlContent, plainText, data) {
+  const plaintextword = plainText.slice(data.start, data.end);
+  const occurrencesBefore = countOccurrencesBeforePosition(
+    plainText,
+    plaintextword,
+    data.start
+  );
+
+  let count = 0;
   for (let i = 0; i < htmlContent.length; i++) {
     const portionToCheck = htmlContent.slice(i, i + plaintextword.length);
     if (portionToCheck === plaintextword) {
@@ -71,7 +85,7 @@ function getTerminalOutput() {
    object containing `start` and `end` positions in the plain text).
 2. It extracts the `plaintextword` based on the provided start and end 
    positions in the plainTextPositions array.
-   
+
 ```jsx 
 
   const plaintextword = plainText.slice(data.start, data.end);
@@ -134,3 +148,14 @@ function countOccurrencesBeforePosition(plainText, plaintextword, position) {
 ### Output Screenshot 
 
 #### Inside Visual Studio Code
+
+<img width="960" alt="Screenshot 2023-08-03 215101" src="https://github.com/Pankaj20202024/SteeleyeAssignement2/assets/121535589/25ee2448-e504-43bc-9178-09e0501d4218">
+
+#### Inside Console in google chrome 
+
+<img width="847" alt="Screenshot 2023-08-03 215217" src="https://github.com/Pankaj20202024/SteeleyeAssignement2/assets/121535589/ca624ecc-664e-4c2d-acd8-c257bac78767">
+
+***
+### Execution Demo 
+
+https://github.com/Pankaj20202024/SteeleyeAssignement2/assets/121535589/f86fec2c-c91d-4bdd-9122-f64af5562153
