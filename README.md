@@ -186,6 +186,6 @@ function countOccurrencesBeforePosition(plainText, plaintextword, position) {
 <img width="847" alt="Screenshot 2023-08-03 215217" src="https://github.com/Pankaj20202024/SteeleyeAssignement2/assets/121535589/ca624ecc-664e-4c2d-acd8-c257bac78767">
 
 ***
-### Execution Demo 
+### Execution Vedio
 
 https://github.com/Pankaj20202024/SteeleyeAssignement2/assets/121535589/f86fec2c-c91d-4bdd-9122-f64af5562153
